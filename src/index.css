@@ -83,7 +83,6 @@
   animation-duration: 0.5s;
 }
 
-#project { 
-  animation-name: animate-drop; 
-  animation-timing-function: cubic-bezier(.77, .14, .91, 1.25);
+#card-div-shadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
