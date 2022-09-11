@@ -30,7 +30,7 @@ app.post('/minecraftspeedrun/email', async (req, res) => {
     await axios.post('https://api.emailjs.com/api/v1.0/email/send', data);
   }
   catch (e) {
-    console.log('whoops', e);
+    console.log('whooops', e);
   }
 });
 
