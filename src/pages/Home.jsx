@@ -1,4 +1,5 @@
 import { React, useState } from "react"
+import axios from "axios"
 import home_image from ".././images/bg2.png"
 import pfp from ".././images/transparent_pfp.png"
 import ctb from ".././images/ctb.png"
@@ -12,15 +13,23 @@ export default function Home() {
   const [formName, setFormName] = useState('');
   const [formEmail, setFormEmail] = useState('');
   const [formMessage, setFormMessage] = useState('');
+  const [formError, setFormError] = useState(false);
 
-  function sendEmail(event) {
-    event.preventDefault();
-    console.log(formName)
-    console.log(formEmail)
-    console.log(formMessage)
+  async function sendEmail(e) {
+    e.preventDefault();
+    if (!formName || !formEmail || !formMessage) {
+      setFormError(true);
+    }
+    else {
+      setFormError(false);
+      const emailObject = {
+        'from_name': formName,
+        'reply_email': formEmail,
+        'message': formMessage
+      }
+      await axios.post('/minecraftspeedrun/email', emailObject);
+    }  
   }
-
-
 
   return (
     <div id="top-section">
@@ -117,7 +126,10 @@ export default function Home() {
             <input className="rounded-xl bg-slate-200 mt-5 p-3 focus:outline-0 w-5/6" type="text" value={formName} placeholder="Name" onChange={(e) => setFormName(e.target.value)}/>
             <input className="rounded-xl bg-slate-200 mt-5 p-3 focus:outline-0 w-5/6" type="text" value={formEmail} placeholder="Email" onChange={(e) => setFormEmail(e.target.value)}/>
             <textarea className="rounded-xl bg-slate-200 mt-5 p-3 focus:outline-0 w-5/6 h-48" id="message-box" value={formMessage} placeholder="Message" onChange={(e) => setFormMessage(e.target.value)}/>
-            <button className="rounded-xl px-3 bg-slate-200 hover:bg-slate-400 mt-5 w-1/4 h-14 lg:h-10">Send Email</button>
+            <div className="flex flex-row items-center">
+              <button className={`rounded-xl px-3 ${formError ? "bg-red-500" : "bg-slate-200"} mt-5 w-1/4 h-14 lg:h-10 hover:bg-slate-400`}>Send Email</button>
+              <div className={`mt-5 px-5 ${formError ? "text-red-500" : "text-white"}`}>plz enter name, email, & message</div>
+            </div>
           </form>
         </div>
       </div>
