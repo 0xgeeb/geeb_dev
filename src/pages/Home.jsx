@@ -7,6 +7,7 @@ import rap from ".././images/rap.png"
 import yelp from ".././images/yelp.png"
 import copy from ".././images/copy.png"
 import eth from ".././images/eth.png"
+import twitter from ".././images/twitter.png"
 
 export default function Home() {
 
@@ -33,22 +34,22 @@ export default function Home() {
 
   return (
     <div id="top-section">
-      <div className="h-[1050px] flex flex-col" style={{backgroundImage: `url(${home_image})`}} id="background-div">
-        <div className="lg:fixed mt-64 mx-auto left-[13%]" >
-          <img className="h-48 w-48 lg:h-80 lg:w-80" src={pfp} id="avatar"/>
+      <div className="h-[1800px] lg:h-[1050px] flex flex-col" style={{backgroundImage: `url(${home_image})`}} id="background-div">
+        <div className="lg:fixed mt-48 lg:mt-64 mx-auto left-[13%]" >
+          <img className="h-80 lg:w-80" src={pfp} id="avatar"/>
         </div>
-        <div className="w-[70%] flex justify-end mt-64">
+        <div className="w-[70%] flex justify-end mt-12 lg:mt-64">
           <h1 className="text-[5rem] drop-shadow-lg" >geeb.dev</h1>
         </div>
       </div>
-      <div className="sm:px-10 w-[100%] h-[1000px] bg-slate-500 flex flex-row" id="about-section">
-        <div className="w-[40%] mt-48">
+      <div className="sm:px-10 w-[100%] h-[1900px] lg:h-[1000px] bg-slate-500 flex flex-row" id="about-section">
+        <div className="w-[40%] mt-[600px] lg:mt-48">
           
         </div>
-        <div className="w-[100%] lg:w-[50%] mt-48 flex flex-col bg-white h-[600px] rounded-lg p-5" id="card-div-shadow">
+        <div className="w-[100%] lg:w-[50%] mt-[600px] lg:mt-48 flex flex-col bg-white h-[600px] rounded-lg p-5" id="card-div-shadow">
           <h1 className="mx-auto text-[4rem]">hello, I'm 0xgeeb</h1>
           <h3 className="mt-8 px-8 font-bold text-[1.5rem]">about me</h3>
-          <p className="mt-2 px-8">I'm an aspiring software developer that is focused on building innovative smart contracts with full-stack web applications for users to access the decentralized products/services. I wrote my first print hello world program in mid 2021 and have been teaching myself software development since. I am most interested in and learning about smart contract development, full-stack web development, MEV searching, game development & cybersecurity.</p>
+          <p className="mt-2 px-8">I'm an aspiring software developer that is focused on building innovative smart contracts with full-stack web applications for users to access the decentralized products/services. I wrote my first print hello world program in mid 2021 and have been teaching myself software development since. I am most interested in and learning about smart contract development, full-stack web development, MEV searching, game development, & cybersecurity.</p>
           <h3 className="mt-8 px-8 font-bold text-[1.5rem]">my skills</h3>
           <div className="mt-4 px-8 flex flex-row space-x-4">
             <div className="bg-slate-200 hover:bg-slate-400 w-24 p-2 flex justify-center rounded">Solidity</div>
@@ -95,7 +96,7 @@ export default function Home() {
             <img className="h-80 w-100 mx-auto ml-18 mt-8" src={eth} />
             <a className="mx-auto text-blue-500 underline mt-4" href="https://github.com/0xgeeb/speedrun_eth" target="_blank">github.com/0xgeeb/speedrun_eth</a>
           </div>
-          <div className="w-[100%] lg:w-[70%] mt-24 mx-auto flex flex-col bg-white h-[600px] rounded-xl p-8" id="card-div-shadow">
+          <div className="w-[100%] lg:w-[70%] mt-24 mx-auto flex flex-col bg-white h-[625px] rounded-xl p-8" id="card-div-shadow">
             <h1 className="mx-auto text-[2rem] font-bold border-b-2 border-black">Rap Defender</h1>
             <p className="text-center mx-auto mt-8 w-[75%]">Turn based NFT game with rappers as characters. Followed along with the Buildspace project while working on this game. Built using React, Ethers & Hardhat.</p>
             <img className="h-80 w-100 mx-auto mt-8" src={rap} />
@@ -122,7 +123,10 @@ export default function Home() {
           </div>
           <form className="mx-auto sm:ml-20 w-[100%] lg:w-[50%] flex flex-col" onSubmit={sendEmail}>
             <h1 className="w-5/6 flex justify-center text-[3rem]">contact me</h1>
-            <p className="w-5/6 mt-3 flex justify-center mb-8">feel free to reach out to me using this form or on social media</p>
+            <div className="w-5/6 flex justify-center flex-row mt-3 mb-8">
+              <p className="">feel free to reach out to me using this form or on twitter</p>
+              <a className="hover:opacity-50" href="https://twitter.com/0xgeeb" target="_blank"><img className="ml-1 w-7 h-7" src={twitter} /></a>
+            </div>
             <input className="rounded-xl bg-slate-200 mt-5 p-3 focus:outline-0 w-5/6" type="text" value={formName} placeholder="Name" onChange={(e) => setFormName(e.target.value)}/>
             <input className="rounded-xl bg-slate-200 mt-5 p-3 focus:outline-0 w-5/6" type="text" value={formEmail} placeholder="Email" onChange={(e) => setFormEmail(e.target.value)}/>
             <textarea className="rounded-xl bg-slate-200 mt-5 p-3 focus:outline-0 w-5/6 h-48" id="message-box" value={formMessage} placeholder="Message" onChange={(e) => setFormMessage(e.target.value)}/>
