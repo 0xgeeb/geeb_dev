@@ -116,8 +116,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="h-[555px] mt-36 mb-48" id="contact-section">
-        <div className="flex flex-row w-5/6 h-[500px] justify-center mt-16 mx-auto">
+      <div className="h-[1200px] lg:h-[555px] mt-36 mb-48" id="contact-section">
+        <div className="flex flex-row w-5/6 h-[500px] justify-center mt-[400px] lg:mt-16 mx-auto">
           <div className="flex flex-col mx-auto lg:w-[25%]">
             
           </div>
