@@ -6,7 +6,7 @@ export default function About() {
       <div className="w-[0] lg:w-[40%] mt-[600px] lg:mt-48">
 
       </div>
-      <div className="w-[100%] lg:w-[50%] mt-[30%] lg:mt-[10%] flex flex-col bg-white h-[70%] lg:h-[63%] rounded-xl p-5" id="card-div-shadow">
+      <div className="w-[100%] lg:w-[50%] mt-[30%] lg:mt-[10%] flex flex-col bg-white h-[80%] lg:h-[63%] rounded-xl p-5" id="card-div-shadow">
         <h1 className="mx-auto text-[4rem]">hey ser, I'm geeb</h1>
         <h3 className="mt-12 lg:mt-8 px-8 font-bold text-[3rem] lg:text-[1.5rem]">about me</h3>
         <p className="mt-2 px-8 text-[1.7rem] lg:text-[1rem]">I'm a full-stack and solidity developer that is focused on building innovative smart contracts with web applications for users to access the decentralized products/services.</p>
